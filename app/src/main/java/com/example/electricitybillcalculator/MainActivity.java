@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_about);
 
         editTextUnits = findViewById(R.id.editTextUnits);
         editTextRebate = findViewById(R.id.editTextRebate);
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCalculate = findViewById(R.id.buttonCalculate);
         buttonClear = findViewById(R.id.buttonClear);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
         buttonCalculate.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     private void validateInput(EditText editText) {
         String input = editText.getText().toString().trim();
         if (!TextUtils.isEmpty(input)) {
