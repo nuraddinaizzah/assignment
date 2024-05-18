@@ -1,4 +1,5 @@
 package com.example.electricitybillcalculator;
+import android.content.Intent;
 import android.view.MenuItem;
 import android.os.Bundle;
 import android.text.Editable;
@@ -33,10 +34,12 @@ public class MainActivity extends AppCompatActivity {
         int selected = item.getItemId();
 
         if (selected == R.id.menuAbout) {
-            Toast.makeText(this, "about clicked", Toast.LENGTH_SHORT).show();
+            // Handle about button click
+            Intent intent = new Intent(this, About.class);
+            startActivity(intent);
             return true;
         } else if (selected == R.id.menuHome) {
-            Toast.makeText(this, "home clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You are at the current page!", Toast.LENGTH_SHORT).show();
             return true;
         }
         return super.onOptionsItemSelected(item);
