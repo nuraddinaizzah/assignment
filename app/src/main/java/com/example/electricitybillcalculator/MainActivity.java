@@ -1,5 +1,6 @@
 package com.example.electricitybillcalculator;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.MenuItem;
 import android.os.Bundle;
 import android.text.Editable;
@@ -58,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        // Find the TextView representing the title in the Toolbar
+        TextView toolbarTitle = myToolbar.findViewById(R.id.my_toolbar);
+
+        // Set the text color programmatically
+        toolbarTitle.setTextColor(Color.WHITE);
 
         buttonCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
