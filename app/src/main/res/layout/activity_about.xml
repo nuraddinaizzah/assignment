@@ -31,8 +31,9 @@
         app:layout_constraintHorizontal_bias="0.5"
         android:layout_marginTop="16dp" />
 
+    <!-- CardView for Image -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardViewImage"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="16dp"
@@ -51,41 +52,114 @@
             android:src="@drawable/profilepic" />
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/developerDetails"
-        android:layout_width="wrap_content"
+    <!-- CardView for Developer Details -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewDeveloperDetails"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name: NURADDINA IZZAH BINTI HAMIZI\nSTUDENT ID: 2023301289\nGROUP: RCS2405A\nPROGRAMME CODE: ICT602"
-        android:textAlignment="center"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/cardView"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/cardViewImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/appInfo"
-        android:layout_width="268dp"
-        android:layout_height="183dp"
-        android:text="About this application: This application calculates the electricity bill based on the units consumed and applies any applicable rebates."
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/appWebsite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NAME:"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="NURADDINA IZZAH BINTI HAMIZI"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STUDENT ID:"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/studentIdTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2023301289"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GROUP:"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/groupTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RCS2405A"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PROGRAMME CODE:"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/programmeCodeTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ICT602"/>
+            </TableRow>
+
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView for App Info -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewAppInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/cardViewDeveloperDetails"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/developerDetails"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/appInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About this application:\n Tasked to calculate the electricity bill based on the units consumed and applies any applicable rebates."
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:padding="16dp"/>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/copyrightStatement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:text="© 2024 NURADDINA IZZAH BINTI HAMIZI. All rights reserved."
-
         app:layout_constraintBottom_toTopOf="@+id/appWebsite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/developerDetails"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewAppInfo"
         app:layout_constraintVertical_bias="0.897" />
 
     <TextView
@@ -98,6 +172,7 @@
         android:text="Visit our GitHub page"
         android:textColor="@android:color/holo_blue_light"
         android:textStyle="bold"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -109,7 +184,7 @@
         android:id="@+id/buttonGithub"
         android:layout_width="393dp"
         android:layout_height="82dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:onClick="goToGitHub"
         android:text="Go to GitHub"
         app:layout_constraintBottom_toBottomOf="parent"

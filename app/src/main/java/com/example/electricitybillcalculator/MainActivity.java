@@ -1,6 +1,5 @@
 package com.example.electricitybillcalculator;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.MenuItem;
 import android.os.Bundle;
 import android.text.Editable;
@@ -60,12 +59,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        // Find the TextView representing the title in the Toolbar
-        TextView toolbarTitle = myToolbar.findViewById(R.id.my_toolbar);
-
-        // Set the text color programmatically
-        toolbarTitle.setTextColor(Color.WHITE);
-
         buttonCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 double value = Double.parseDouble(input);
                 if (value < 0) {
                     editText.setError("Please enter a non-negative number");
-                } else if (editText == editTextRebate && (value < 0 || value > 5)) {
+                } else if (editText == editTextRebate && (value > 5)) {
                     editText.setError("Please enter a number between 0 and 5");
                 } else {
                     editText.setError(null);
@@ -142,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         double rebatePercentage = Double.parseDouble(editTextRebate.getText().toString());
 
         // Calculating charges based on unit slabs
-        double charges = 0;
+        double charges;
         if (unitsUsed <= 200 && unitsUsed >= 0) {
             charges = unitsUsed * 0.218;
         } else if (unitsUsed <= 300) {
