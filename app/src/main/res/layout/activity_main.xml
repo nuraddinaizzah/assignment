@@ -115,7 +115,7 @@
                 android:dividerHeight="1dp"
                 android:stretchColumns="1">
                 <!-- Set background color for first row -->
-                <TableRow android:background="#1B1A55">
+                <TableRow android:background="#9B74DA">
 
                     <TextView
                         android:layout_width="205dp"
